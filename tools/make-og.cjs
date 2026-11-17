@@ -16,7 +16,7 @@ const K = require(path.join(__dirname, "..", "data.js"));
     </div>
     <div style="flex:1;background:#fffdf7;border:4px solid #1d2a3f;border-radius:8px;overflow:hidden">
       <div style="font-size:30px;font-weight:700;padding:22px 20px 6px">🏪 「この本を千円で売ります」「買います」と口で言い合った。売買は？</div>
-      <div style="display:flex;flex-direction:column;gap:10px;padding:16px">${line("お金を払うまでだめ")}${line("約束だけで成り立つ", 1)}${line("書面がないとだめ")}</div>
+      <div style="display:flex;flex-direction:column;gap:10px;padding:16px">${line("書面を作るまで成り立たない")}${line("もう成り立っている", 1)}${line("品物を渡すまで成り立たない")}</div>
     </div>
   </div></body>`);
   await p.screenshot({ path: path.join(__dirname, "..", "og.png") });
