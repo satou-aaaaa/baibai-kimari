@@ -40,7 +40,7 @@ function resolve(P) {
     case "tetsuke": { const n = num(q, /手付(\d+)万円/); if (Number.isNaN(n)) return null; return /わたした買主/.test(q) ? `手付${n}万円をあきらめて解除できる` : /受けた売主/.test(q) ? `${n * 2}万円を差し出して解除できる` : null; }
     case "basho": { const m = q.match(/、(.+?)で受け取る/); return m ? `${m[1]}（受け取る場所）` : null; }
     case "chakushu": { const who = (q.match(/(売主|買主)の[A-D]さんがやめたい/) || [])[1]; if (!who) return null;
-      const st = /売主が家を引き渡す準備/.test(q) ? "売主" : /買主が代金を払い始めた/.test(q) ? "買主" : /どちらも/.test(q) ? "" : null; if (st === null) return null;
+      const st = /売主が家の引き渡しを始めた/.test(q) ? "売主" : /買主が代金を払い始めた/.test(q) ? "買主" : /どちらも/.test(q) ? "" : null; if (st === null) return null;
       return st && st !== who ? "もう手付では解除できない" : "手付で解除できる"; }
     case "gengaku": return /その間に直らなかった/.test(q) ? "程度に応じて代金を減らせる" : /まだ何も求めていない/.test(q) ? "まず直すよう求める" : null;
     case "jibun": return /まちがった寸法を伝え/.test(q) ? "直すよう求められない" : /店がまちがえた/.test(q) ? "直すよう求められる" : null;
